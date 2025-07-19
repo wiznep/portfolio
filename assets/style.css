@@ -1,0 +1,322 @@
+/* Modern Portfolio Styles for Bibek Thapa */
+:root {
+  --bg: #181a20;
+  --bg-light: #23262f;
+  --text: #f5f6fa;
+  --accent: #4fd1c5;
+  --accent-soft: #2d3748;
+  --card: #23262f;
+  --border: #31344b;
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
+  --font-main: 'Segoe UI', Arial, sans-serif;
+}
+[data-theme="light"] {
+  --bg: #f5f6fa;
+  --bg-light: #fff;
+  --text: #181a20;
+  --accent: #4fd1c5;
+  --accent-soft: #e6fffa;
+  --card: #fff;
+  --border: #e2e8f0;
+  --shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+header.hero {
+  background: linear-gradient(120deg, var(--bg), var(--accent-soft));
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 70% 30%, var(--accent) 0%, transparent 70%);
+  opacity: 0.15;
+  z-index: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5vw 1rem 5vw;
+  z-index: 2;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--accent);
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.hero-content {
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+  z-index: 1;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1rem 0 0.5rem 0;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: var(--shadow);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.btn:hover, .btn-outline:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0 1rem;
+}
+.section {
+  margin-bottom: 3rem;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+.about p {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.skill-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.2rem 2rem;
+  min-width: 180px;
+  box-shadow: var(--shadow);
+}
+.skill-group h3 {
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
+.skill-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+.skill-group li {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.projects .project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  max-width: 340px;
+  min-width: 260px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.project-card img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  background: #222;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+.project-info h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.project-info p {
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+.project-info a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-size: 0.98rem;
+}
+.experience-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.2rem 2rem;
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+}
+.contact-form input, .contact-form textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+  color: var(--text);
+  font-size: 1rem;
+  resize: none;
+}
+.contact-form button {
+  align-self: flex-end;
+}
+.contact-info {
+  text-align: center;
+  color: var(--text);
+}
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.contact-links {
+  margin-top: 0.7rem;
+}
+.footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 0;
+  text-align: center;
+  color: var(--text);
+  margin-top: 2rem;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+}
+.footer-nav {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.footer-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  main {
+    max-width: 98vw;
+  }
+  .skills-grid, .projects .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem 2vw 0.7rem 2vw;
+  }
+  .hero-content {
+    margin: 2.5rem 0 1.2rem 0;
+  }
+  .section h2 {
+    font-size: 1.3rem;
+  }
+  .project-card {
+    min-width: 90vw;
+    max-width: 98vw;
+  }
+  .skill-group {
+    min-width: 90vw;
+    max-width: 98vw;
+  }
+}
